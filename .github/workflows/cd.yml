@@ -47,13 +47,13 @@ jobs:
           publish_dir: ./docs
           destination_dir: ./versions/${{ steps.version-bump.outputs.newTag }}
 
-      # - name: Create new Github Release
-      #   uses: "marvinpinto/action-automatic-releases@latest"
-      #   with:
-      #     repo_token: "${{ secrets.GITHUB_TOKEN }}"
-      #     automatic_release_tag: "latest"
-      #     prerelease: true
-      #     title: ${{ steps.version-bump.outputs.newTag }}
-      #     files: |
-      #       LICENSE.md
-      #       ./docs
+      - name: Create new Github Release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: ${{ steps.version-bump.outputs.newTag }}
+          files: |
+            LICENSE.md
+            ./docs
