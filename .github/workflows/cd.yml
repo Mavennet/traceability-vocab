@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Use Node 16
         uses: actions/setup-node@v1
@@ -35,12 +37,12 @@ jobs:
         with:
           tag-prefix: 'v'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTION_AUTH_TOKEN }}
 
       - name: Deploy test report
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTION_AUTH_TOKEN }}
           publish_dir: ./docs
           destination_dir: ./versions/${{ steps.version-bump.outputs.newTag }}
 
