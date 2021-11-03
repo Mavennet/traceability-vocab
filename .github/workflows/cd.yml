@@ -3,7 +3,7 @@ name: CD
 on:
   push:
     branches:
-      - main
+      - test_branch
 
 jobs:
   release-unstable:
@@ -40,7 +40,7 @@ jobs:
 
       - name: Setup assets
         run: |
-          mkdir ./versions/${{ steps.version-bump.outputs.newTag }}
+          mkdir -p ./versions/${{ steps.version-bump.outputs.newTag }}
           cp ./docs ./versions/${{ steps.version-bump.outputs.newTag }}
 
       - name: Deploy test report
