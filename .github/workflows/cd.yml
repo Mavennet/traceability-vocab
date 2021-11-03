@@ -41,7 +41,7 @@ jobs:
       - name: Setup assets
         run: |
           mkdir -p ./versions/${{ steps.version-bump.outputs.newTag }}
-          cp ./docs ./versions/${{ steps.version-bump.outputs.newTag }}
+          cp ./docs ./versions/${{ steps.version-bump.outputs.newTag }} -R
 
       - name: Deploy test report
         uses: peaceiris/actions-gh-pages@v3
