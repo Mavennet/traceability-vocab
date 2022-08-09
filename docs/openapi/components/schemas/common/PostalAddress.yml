@@ -17,7 +17,7 @@ properties:
       - type: string
         const:
           - PostalAddress   
-  organizationName:
+  name:
     title: Organization Name
     description: The name of the organization expressed in text.
     type: string
