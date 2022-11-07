@@ -1,0 +1,67 @@
+$linkedData:
+  term: SIMASteelImportProductSpecifier
+  '@id': https://w3id.org/traceability#SIMASteelImportProductSpecifier
+title: Steel Product
+description: A finished or unfinished manufactured steel product
+type: object
+properties:
+  type:
+    type: array
+    readOnly: true
+    const:
+      - SIMASteelImportProductSpecifier
+    default:
+      - SIMASteelImportProductSpecifier
+    items:
+      type: string
+      enum:
+        - SIMASteelImportProductSpecifier
+  steelProduct:
+    title: Steel Product
+    description: >-
+      Steel product details.
+    $ref: ./SteelProduct.yml
+    $linkedData:
+      term: steelProduct
+      '@id': https://w3id.org/traceability#SteelProduct
+  productCategory: 
+    title: Product Category
+    description: Category assigned to the product based on the Product HTS. This is automatically generated upon submission. 
+    type: string
+    $linkedData:
+      term: productCategory
+      '@id': https://w3id.org/traceability#ProductCategory
+  customsValue: 
+    title: Customs Value
+    description: Entered value of this product in U.S. dollars; not invoiced value (It should not include duty, brokerage fees, or freight).
+    type: number
+    $linkedData:
+      term: customsValue
+      '@id': https://schema.org/MonetaryAmount
+additionalProperties: false  
+required:
+  - type
+  - steelProduct
+  - customsValue
+example: |-
+  {
+    "type": [
+      "SIMASteelImportProductSpecifier"
+    ],
+    "steelProduct": {
+      "type": ["SteelProduct"],
+      "heatNumber": "841",
+      "specification": "ASTM-66272",
+      "grade": ["95913"],
+      "originalCountryOfMeltAndPour": "MX",
+      "weight": 3200,
+      "weightUnit": "https://service.unece.org/trade/uncefact/vocabulary/rec20/#kilogram",
+      "commodity": {
+        "type": ["Commodity"],
+        "commodityCode": "721320",
+        "commodityCodeType": "HS",
+        "description": "Steel Coils"
+      }
+    },
+    "customsValue": 4450
+  }

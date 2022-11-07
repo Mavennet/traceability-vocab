@@ -1,0 +1,225 @@
+$linkedData:
+  term: ppq587
+  '@id': https://w3id.org/traceability#ppq587
+title: PPQ 587 Application
+description: >-
+  United States Department of Agriculture Animal and Plant Health Inspection
+  Service.  Application for permit to import plants or plant products.
+type: object
+properties:
+  type:
+    type: array
+    readOnly: true
+    const:
+      - ppq587
+    default:
+      - ppq587
+    items:
+      type: string
+      enum:
+        - ppq587
+  signatureDate:
+    title: signatureDate
+    description: Date when the inspection was signed by the inspection officer.
+    type: string
+    $linkedData:
+      term: signatureDate
+      '@id': https://w3id.org/traceability#signatureDate
+      '@type': http://www.w3.org/2001/XMLSchema#dateTime
+  facility:
+    title: Facility
+    description: Information on the inspection facility.
+    $ref: ./Place.yml
+    $linkedData:
+      term: facility
+      '@id': https://www.gs1.org/voc/Place
+  shipment:
+    title: Shipment
+    description: Details for a shipment of agricultural goods.
+    $ref: ./AgricultureParcelDelivery.yml
+    $linkedData:
+      term: shipment
+      '@id': https://schema.org/AgricultureParcelDelivery
+  applicant:
+    title: Applicant
+    description: Entity that is applying for the inspection.
+    $ref: ./Entity.yml
+    $linkedData:
+      term: applicant
+      '@id': https://w3id.org/traceability#dfn-entities
+  intendedUse:
+    title: Intended Use
+    description: >-
+      The intended use for the imported products.  Most commonly in ppq587 this
+      would be 'plants for planting,' 'small lots of seed', and 'fruits and
+      vegetables.'
+    type: string
+    $linkedData:
+      term: intendedUse
+      '@id': https://w3id.org/traceability#intendedUse
+additionalProperties: false
+required:
+  - type
+example: |-
+  {
+    "type": ["ppq587"],
+    "facility": {
+      "type": [
+        "Place"
+      ],
+      "globalLocationNumber": "4274425428831",
+      "geo": {
+        "type": [
+          "GeoCoordinates"
+        ],
+        "latitude": "-76.9169",
+        "longitude": "-37.1065"
+      },
+      "address": {
+        "type": [
+          "PostalAddress"
+        ],
+        "name": "Schuster - Macejkovic",
+        "streetAddress": "83995 Roberts Dale",
+        "addressLocality": "West Abigalestad",
+        "addressRegion": "Montana",
+        "postalCode": "53855",
+        "addressCountry": "Denmark"
+      },
+      "unLocode": "DKCPH"
+    },
+    "shipment": {
+      "type": [
+        "AgricultureParcelDelivery"
+      ],
+      "deliveryAddress": {
+        "type": [
+          "PostalAddress"
+        ],
+        "name": "Bartell - Doyle",
+        "streetAddress": "84189 Roberts Route",
+        "addressLocality": "Kautzerstad",
+        "addressRegion": "Louisiana",
+        "postalCode": "37950-5855",
+        "addressCountry": "Mongolia"
+      },
+      "originAddress": {
+        "type": [
+          "PostalAddress"
+        ],
+        "name": "Marks, Runte and Bartell",
+        "streetAddress": "97696 Weissnat Pines",
+        "addressLocality": "Reynabury",
+        "addressRegion": "North Dakota",
+        "postalCode": "51361-9603",
+        "addressCountry": "Virgin Islands, U.S."
+      },
+      "foreignPortExport": {
+        "type": [
+          "Place"
+        ],
+        "globalLocationNumber": "4947538126450",
+        "geo": {
+          "type": [
+            "GeoCoordinates"
+          ],
+          "latitude": "40.5464",
+          "longitude": "-37.6146"
+        },
+        "address": {
+          "type": [
+            "PostalAddress"
+          ],
+          "name": "Moen - Swift",
+          "streetAddress": "9746 Laron Gardens",
+          "addressLocality": "Port Flossie",
+          "addressRegion": "Hawaii",
+          "postalCode": "64687",
+          "addressCountry": "Djibouti"
+        },
+        "unLocode": "DKCPH"
+      },
+      "portOfEntry": {
+        "type": [
+          "Place"
+        ],
+        "globalLocationNumber": "2184109798407",
+        "geo": {
+          "type": [
+            "GeoCoordinates"
+          ],
+          "latitude": "38.8485",
+          "longitude": "-34.0883"
+        },
+        "address": {
+          "type": [
+            "PostalAddress"
+          ],
+          "name": "Mills, Daugherty and Nader",
+          "streetAddress": "39514 Kulas Terrace",
+          "addressLocality": "East Avis",
+          "addressRegion": "Utah",
+          "postalCode": "45553",
+          "addressCountry": "Northern Mariana Islands"
+        },
+        "unLocode": "DKCPH"
+      },
+      "deliveryMethod": "Truck transport",
+      "trackingNumber": "866440000109",
+      "expectedArrival": "2021-03-14",
+      "specialInstructions": "The package is top-heavy so handle with appropriate caution.",
+      "consignee": {
+        "type": [
+          "Organization"
+        ],
+        "name": "Ace Foodstuffs",
+        "description": "Agricultural goods shipping & distribution",
+        "email": "Hipolito58@acefoodstuffs.org",
+        "phoneNumber": "555-895-1661",
+        "faxNumber": "555-497-2527"
+      },
+      "agriculturePackage": [
+        {
+          "type": [
+            "AgriculturePackage"
+          ]
+        }
+      ],
+      "shipper": {
+        "type": ["Organization"],
+        "name": "Green Fields",
+        "description": "Growing & packaging for high quality produce",
+        "email": "sales@greenfields.org",
+        "phoneNumber": "+1-555-865-8495"
+      },
+      "purchaser": {
+        "type": ["Organization"],
+        "name": "Ace Foodstuffs",
+        "description": "Agricultural goods shipping & distribution",
+        "email": "Hipolito58@acefoodstuffs.org",
+        "phoneNumber": "555-895-1661",
+        "faxNumber": "555-497-2527"
+      },
+      "carrier": {
+        "type": [
+          "Organization"
+        ],
+        "email": "Adaline29@example.com",
+        "phoneNumber": "+1 555-234-9983"
+      },
+      "broker": {
+        "type": ["Organization"],
+        "name": "Koch LLC",
+        "leiCode": "54321351219389121979"
+      }
+    },
+    "applicant": {
+      "type": ["Entity"],
+      "name": "Example Applicant Organization",
+      "email": "Jensen85@example.com",
+      "phoneNumber": "555-941-9125",
+      "entityType": "Organization"
+    },
+    "signatureDate": "2021-02-16",
+    "intendedUse": "Fruits and Vegetables"
+  }

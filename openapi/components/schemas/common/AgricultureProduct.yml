@@ -1,0 +1,150 @@
+$linkedData:
+  term: AgricultureProduct
+  '@id': https://w3id.org/traceability#AgricultureProduct
+title: Agriculture Product
+description: >-
+  An agricultural product, extending the Product schema.  This schema
+  accounts for the FDA lebeling data requirements at the crate level as
+  specified here:
+  https://www.producetraceability.org/documents/FINAL_PTI_Harmonized_Traceabilty_Case_Label_April_2020_(003).pdf
+type: object
+properties:
+  type:
+    type: array
+    readOnly: true
+    const:
+      - AgricultureProduct
+    default:
+      - AgricultureProduct
+    items:
+      type: string
+      enum:
+        - AgricultureProduct
+  upc:
+    title: UPC Number
+    description: >-
+      UPC (aka UPC-A) consists of 12 numeric digits that are uniquely assigned
+      to each trade item. Along with the related EAN barcode, the UPC is the
+      barcode mainly used for scanning of trade items at the point of sale, per
+      GS1 specifications.
+    type: string
+    $linkedData:
+      term: upc
+      '@id': https://www.gs1.org/standards/barcodes/ean-upc
+  plu:
+    title: PLU Number
+    description: >-
+      PLUs are a system of numbers that uniquely identify bulk produce sold in
+      grocery stores and supermarkets.  See the following link for further
+      information: https://www.pma.com/content/articles/2014/05/plu-codes
+    type: string
+    $linkedData:
+      term: plu
+      '@id': https://w3id.org/traceability#plu
+  gtin:
+    title: GTIN Code
+    description: >-
+      Global Trade Item Number (GTIN) can be used by a company to uniquely
+      identify all of its trade items.
+    type: string
+    $linkedData:
+      term: gtin
+      '@id': https://www.gs1.org/voc/gtin
+  product:
+    title: Product
+    description: Product details as specified in the Product schema
+    $ref: ./Product.yml
+    $linkedData:
+      term: product
+      '@id': https://www.gs1.org/voc/Product
+  scientificName:
+    title: Scientific Name
+    description: >-
+      The scientific classification of the agricultural product.  Each plant has
+      a scientific name comprised of a binomial which indicates the genus and
+      specific identifier of the plant.
+    type: string
+    $linkedData:
+      term: scientificName
+      '@id': https://w3id.org/traceability#scientificName
+  labelImageUrl:
+    title: Label Image URL
+    description: Image of the package label
+    type: string
+    $linkedData:
+      term: labelImageUrl
+      '@id': https://schema.org/url
+  labelImageHash:
+    title: Label Image Hash
+    description: >-
+      Hash value for securely identifying the label image.  More information can
+      be found at the following link: https://cybersecurityglossary.com/hashing
+    type: string
+    $linkedData:
+      term: labelImageHash
+      '@id': https://w3id.org/traceability#labelImageHash
+  name:
+    title: Name
+    description: Name of the ag. product.
+    type: string
+    $linkedData:
+      term: name
+      '@id': https://www.schema.org/name
+  productImageUrl:
+    title: Product Image URL
+    description: Image of the product.
+    type: string
+    $linkedData:
+      term: productImageUrl
+      '@id': https://schema.org/url
+  productImageHash:
+    title: Product Image Hash
+    description: >-
+      Hash value for securely identifying the product image.  More information can
+      be found at the following link: https://cybersecurityglossary.com/hashing
+    type: string
+    $linkedData:
+      term: productImageHash
+      '@id': https://w3id.org/traceability#productImageHash
+additionalProperties: true
+example: |-
+  {
+    "type": ["AgricultureProduct"],
+    "upc": "033383401508",
+    "plu": "94225",
+    "gtin": "033383401508",
+    "product": {
+      "type": ["Product"],
+      "manufacturer": {
+        "type": ["Organization"],
+        "name": "Jimbo's Awesome Farm",
+        "description": "Organic fruits & vegetables",
+        "email": "Chloe.Ondricka42@jimbofarm.example.org",
+        "phoneNumber": "555-496-7149",
+        "faxNumber": "555-209-6489"
+      },
+      "name": "Avocados",
+      "description": "Avocados, 4 pack boxes",
+      "sizeOrAmount": {
+        "type": [
+          "QuantitativeValue"
+        ],
+        "unitCode": "boxes",
+        "value": "893"
+      },
+      "weight": {
+        "type": [
+          "QuantitativeValue"
+        ],
+        "unitCode": "lbs",
+        "value": "1784"
+      },
+      "sku": "71266019767"
+    },
+    "scientificName": "Persea americana",
+    "labelImageUrl": "https://img.example.org/033383401508/640/480/",
+    "labelImageHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "name": "Avocados",
+    "productImageUrl": "https://img.example.org/102934920857/937/903/",
+    "productImageHash": "8kb47j986hklhde4rfh78okjhgjo08765fgu7tfg4t864fy876rfser45thj87f3"
+  }
