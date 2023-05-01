@@ -21,7 +21,7 @@ properties:
   business:
     title: Business
     description: The business entity performing the activity.
-    $ref: ./Entity.yml
+    $ref: ./Organization.yml
     $linkedData:
       term: business
       '@id': https://w3id.org/traceability#dfn-entities
@@ -34,7 +34,6 @@ properties:
     $linkedData:
       term: actor
       '@id': https://w3id.org/traceability#Person
-      '@type': https://schema.org/ItemList
   location:
     title: Location
     description: The location where the activity was performed.
@@ -51,11 +50,11 @@ properties:
       '@id': https://schema.org/DateTime
   activityType:
     title: Activity Type
-    description: Type of Avtivity, e.g. plant, harvest, spray.
+    description: Type of Activity, e.g., plant, harvest, spray.
     type: string
     $linkedData:
       term: activityType
-      '@id': https://www.schema.org/value
+      '@id': https://schema.org/value
   agricultureProduct:
     title: Product List
     description: Agricultural Product the Activity was performed on if known
@@ -65,7 +64,6 @@ properties:
     $linkedData:
       term: agricultureProduct
       '@id': https://schema.org/ItemList
-      '@type': https://schema.org/ItemList
   observation:
     title: Observation or Notes List
     description: >-
@@ -77,8 +75,9 @@ properties:
     $linkedData:
       term: observation
       '@id': https://w3id.org/traceability#observation
-      '@type': https://schema.org/ItemList
 additionalProperties: true
+required:
+  - type
 example: |-
   {
     "type": ["AgricultureActivity"],

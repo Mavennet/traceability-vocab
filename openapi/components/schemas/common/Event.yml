@@ -39,7 +39,6 @@ properties:
     $linkedData:
       term: actor
       '@id': https://w3id.org/traceability#Organization
-      '@type': https://schema.org/ItemList
   place:
     title: Event Location
     description: The location where the event took place.
@@ -64,6 +63,8 @@ properties:
       term: products
       '@id': https://w3c-ccg.github.io/hashlink/#hl-url-params
 additionalProperties: false
+required:
+  - type
 example: |-
   {
     "type": ["Event"],

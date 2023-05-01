@@ -43,28 +43,28 @@ properties:
     type: string
     $linkedData:
       term: valuePerItem
-      '@id': https://www.schema.org/value
+      '@id': https://schema.org/value
   totalOrderValue:
     title: Total Order Value
     description: Total value of the order
     type: string
     $linkedData:
       term: totalOrderValue
-      '@id': https://www.schema.org/value
+      '@id': https://schema.org/value
   freightChargeTerms:
     title: freight Charge Terms
     description: Terms of the freight charge
     type: string
     $linkedData:
       term: freightChargeTerms
-      '@id': https://www.schema.org/value
+      '@id': https://schema.org/value
   batchNumber:
     title: Batch Number
     description: A tracking number for commodities
     type: string
     $linkedData:
       term: batchNumber
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#batchIdentificationId
+      '@id': https://vocabulary.uncefact.org/ReferenceCodeList#BT
   openingVolume:
     title: Opening Volume
     description: Volume at injection
@@ -91,6 +91,8 @@ properties:
       term: observation
       '@id': https://w3id.org/traceability#observation
 additionalProperties: false
+required:
+  - type
 example: |-
   {
     "type": [
@@ -123,29 +125,81 @@ example: |-
         "type": [
           "Organization"
         ],
+        "name": "Adaline",
         "email": "Adaline29@example.com",
-        "phoneNumber": "+1 555-234-9983"
+        "phoneNumber": "+1 555-234-9983",
+        "location": {
+          "type": ["Place"],
+          "address": {
+            "type": ["PostalAddress"],
+            "name": "Hahn LLC",
+            "streetAddress": "786 Pfeffer Plains",
+            "addressLocality": "West Ottilie",
+            "addressRegion": "Nebraska",
+            "postalCode": "50878-0870",
+            "addressCountry": "Cook Islands"
+          }
+        }
       },
       "consignor": {
         "type": [
           "Organization"
         ],
+        "name": "Idella",
         "email": "Idella60@example.org",
-        "phoneNumber": "555-953-9479"
+        "phoneNumber": "555-953-9479",
+        "location": {
+          "type": ["Place"],
+          "address": {
+            "type": ["PostalAddress"],
+            "name": "Hahn LLC",
+            "streetAddress": "786 Pfeffer Plains",
+            "addressLocality": "West Ottilie",
+            "addressRegion": "Nebraska",
+            "postalCode": "50878-0870",
+            "addressCountry": "Cook Islands"
+          }
+        }
       },
       "consignee": {
         "type": [
           "Organization"
         ],
+        "name": "Victoria Hane",
         "email": "Victoria.Hane74@example.org",
-        "phoneNumber": "555-455-9053"
+        "phoneNumber": "555-455-9053",
+        "location": {
+          "type": ["Place"],
+          "address": {
+            "type": ["PostalAddress"],
+            "name": "Hahn LLC",
+            "streetAddress": "786 Pfeffer Plains",
+            "addressLocality": "West Ottilie",
+            "addressRegion": "Nebraska",
+            "postalCode": "50878-0870",
+            "addressCountry": "Cook Islands"
+          }
+        }
       },
       "notify": {
         "type": [
           "Organization"
         ],
+        "name": "Floridas",
         "email": "Florida91@example.net",
-        "phoneNumber": "555-104-1126"
+        "phoneNumber": "555-104-1126",
+        "location": {
+          "type": ["Place"],
+          "address": {
+            "type": ["PostalAddress"],
+            "name": "Hahn LLC",
+            "streetAddress": "786 Pfeffer Plains",
+            "addressLocality": "West Ottilie",
+            "addressRegion": "Nebraska",
+            "postalCode": "50878-0870",
+            "addressCountry": "Cook Islands"
+          }
+        }
       },
       "freight": {
         "type": ["ParcelDelivery"],

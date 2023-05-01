@@ -43,6 +43,8 @@ properties:
       term: additionalData
       '@id': https://w3id.org/traceability#FSMAAbstractKDE
 additionalProperties: false
+required:
+  - type
 example: |-
   {
     "type": ["FSMAGrowingCTE"],
@@ -68,9 +70,9 @@ example: |-
         "locationName": "John's Tomato Farm #1"
       },
       "lotCodeGeneratorPOC": {
-        "type": ["Entity"],
-        "entityType" : "Person",
-        "name" : "John Davis",
+        "type": ["Person"],
+        "firstName" : "John",
+        "lastName" : "Davis",
         "email": "produce@example.com",
         "phoneNumber": "129-697-0673"
       },

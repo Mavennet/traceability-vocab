@@ -38,8 +38,8 @@ properties:
       '@id': https://w3id.org/traceability#grade
   responsibleParty:
     title: Responsible Party
-    description: Entity that produced and packaged the products.
-    $ref: ./Entity.yml
+    description: Organization that produced and packaged the products.
+    $ref: ./Organization.yml
     $linkedData:
       term: responsibleParty
       '@id': https://w3id.org/traceability#responsibleParty
@@ -86,7 +86,6 @@ properties:
     $linkedData:
       term: agricultureProduct
       '@id': https://schema.org/ItemList
-      '@type': https://schema.org/ItemList
   harvest:
     title: Harvest
     description: Product harvest.
@@ -95,17 +94,18 @@ properties:
       term: harvest
       '@id': https://w3id.org/traceability#AgricultureActivity
 additionalProperties: true
+required:
+  - type
 example: |-
   {
     "type": ["AgriculturePackage"],
     "packageName": "Avocados, Bulk",
     "grade": "AA",
     "responsibleParty": {
-      "type": ["Entity"],
+      "type": ["Organization"],
       "name": "Example Responsible Party Organization",
       "email": "Chadrick_Gibson@example.com",
-      "phoneNumber": "+1-555-820-1520",
-      "entityType": "Organization"
+      "phoneNumber": "+1-555-820-1520"
     },
     "voicePickCode": "4642",
     "date": "2021-03-14",

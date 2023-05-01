@@ -36,28 +36,28 @@ properties:
     type: string
     $linkedData:
       term: inBondNumber
-      '@id': https://w3id.org/identifier
+      '@id': https://schema.org/identifier
   entryId:
     title: Entry ID
     description: ACE entry summary unique identifier
     type: string
     $linkedData:
       term: entryId
-      '@id': https://w3id.org/identifier
+      '@id': https://schema.org/identifier
   ftzNo:
     title: FTZ Number
     description: ACE admission no. into an FTZ zone
     type: string
     $linkedData:
       term: ftzNo
-      '@id': https://w3id.org/identifier
+      '@id': https://schema.org/identifier
   inBondType:
     title: InBond Type
     description: Type of InBond
     type: string
     $linkedData:
       term: inBondType
-      '@id': https://w3id.org/identifier
+      '@id': https://schema.org/identifier
   portOfEntry:
     title: Port of Entry
     description: Port of Entry declared in US
@@ -85,28 +85,28 @@ properties:
     $ref: ./Organization.yml
     $linkedData:
       term: carrier
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#carrierParty
+      '@id': https://vocabulary.uncefact.org/carrierParty
   irsNumber:
     title: IRS Number
     description: Number for identification with IRS
     type: string
     $linkedData:
       term: irsNumber
-      '@id': https://w3id.org/identifier
+      '@id': https://schema.org/identifier
   recipient:
     title: Recipient
     description: Entity that will recieve product
     $ref: ./Organization.yml
     $linkedData:
       term: recipient
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#consigneeParty
+      '@id': https://vocabulary.uncefact.org/consigneeParty
   billOfLadingNumber:
     title: BOL
     description: Identifier for the individual BOL
     type: string
     $linkedData:
       term: billOfLadingNumber
-      '@id': https://w3id.org/identifier
+      '@id': https://schema.org/identifier
   expectedDeliveryDate:
     title: Expected Delivery Date
     description: Date when the product is expected to arrive
@@ -129,6 +129,8 @@ properties:
       term: totalOrderValue
       '@id': https://schema.org/PriceSpecification
 additionalProperties: false
+required:
+  - type
 example: |-
   {
     "type": [

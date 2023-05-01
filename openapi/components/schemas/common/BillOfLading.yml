@@ -59,40 +59,285 @@ properties:
     description: >-
       The party providing the transport of goods in this consignment between
       named points.
-    $ref: ./Organization.yml
+    type: object
+    properties:
+      type:
+        type: array
+        readOnly: true
+        const:
+          - Organization
+        default:
+          - Organization
+        items:
+          type: string
+          enum:
+            - Organization
+      id:
+        title: Identifier
+        description: Decentralized identifier for the carrier.
+        type: string
+      name:
+        title: Name
+        description: Name of the carrier.
+        type: string
+      url:
+        title: URL
+        description: URL of the carrier.
+        type: string
+      description:
+        title: Description
+        description: Description of the carrier.
+        type: string
+      email:
+        title: Email Address
+        description: carrier's primary email address.
+        type: string
+      phoneNumber:
+        title: Phone Number
+        description: carrier's contact phone number.
+        type: string
+      location:
+        title: Location
+        description: freight forwarder's physical location, such as address or coordinates.
+        type: object
+        properties:
+          type:
+            type: array
+            readOnly: true
+            const:
+              - Place
+            default:
+              - Place
+            items:
+              type: string
+              enum:
+                - Place
+          address:
+            title: Postal Address
+            description: The postal address for an organization or place.
+            $ref: ./PostalAddress.yml
+        additionalProperties: false
+        required:
+          - type
+          - address
+    additionalProperties: false
+    required:
+      - type
+      - name
+      - location
     $linkedData:
       term: carrier
       '@id': >-
-        https://service.unece.org/trade/uncefact/vocabulary/uncefact/#carrierParty
+        https://vocabulary.uncefact.org/carrierParty
   consignor:
     title: Consignor
     description: >-
       The party consigning goods, as stipulated in the transport contract by the
       party ordering transport.
-    $ref: ./Organization.yml
+    type: object
+    properties:
+      type:
+        type: array
+        readOnly: true
+        const:
+          - Organization
+        default:
+          - Organization
+        items:
+          type: string
+          enum:
+            - Organization
+      id:
+        title: Identifier
+        description: Decentralized identifier of the consignor.
+        type: string
+      name:
+        title: Name
+        description: Name of the consignor.
+        type: string
+      url:
+        title: URL
+        description: URL of the consignor.
+        type: string
+      description:
+        title: Description
+        description: Description of the consignor.
+        type: string
+      email:
+        title: Email Address
+        description: consignor's primary email address.
+        type: string
+      phoneNumber:
+        title: Phone Number
+        description: consignor's contact phone number.
+        type: string
+      location:
+        title: Location
+        description: consignor's physical location, such as address or coordinates.
+        type: object
+        properties:
+          type:
+            type: array
+            readOnly: true
+            const:
+              - Place
+            default:
+              - Place
+            items:
+              type: string
+              enum:
+                - Place
+          address:
+            title: Postal Address
+            description: The postal address for an organization or place.
+            $ref: ./PostalAddress.yml
+    additionalProperties: false
+    required:
+      - type
+      - name
     $linkedData:
       term: consignor
       '@id': >-
-        https://service.unece.org/trade/uncefact/vocabulary/uncefact/#consignorParty
+        https://vocabulary.uncefact.org/consignorParty
   consignee:
     title: Consignee
     description: A party to which goods are consigned.
-    $ref: ./Organization.yml
+    type: object
+    properties:
+      type:
+        type: array
+        readOnly: true
+        const:
+          - Organization
+        default:
+          - Organization
+        items:
+          type: string
+          enum:
+            - Organization
+      id:
+        title: Identifier
+        description: Decentralized identifier for the consignee
+        type: string
+      name:
+        title: Name
+        description: Name of the consignee.
+        type: string
+      url:
+        title: URL
+        description: URL of the consignee.
+        type: string
+      description:
+        title: Description
+        description: Description of the consignee.
+        type: string
+      email:
+        title: Email Address
+        description: consignee's primary email address.
+        type: string
+      phoneNumber:
+        title: Phone Number
+        description: consignee's contact phone number.
+        type: string
+      location:
+        title: Location
+        description: Consignee's physical location, such as address or coordinates.
+        type: object
+        properties:
+          type:
+            type: array
+            readOnly: true
+            const:
+              - Place
+            default:
+              - Place
+            items:
+              type: string
+              enum:
+                - Place
+          address:
+            title: Postal Address
+            description: The postal address for an organization or place.
+            $ref: ./PostalAddress.yml
+    additionalProperties: false
+    required:
+      - type
+      - name
     $linkedData:
       term: consignee
       '@id': >-
-        https://service.unece.org/trade/uncefact/vocabulary/uncefact/#consigneeParty
+        https://vocabulary.uncefact.org/consigneeParty
   notify:
     title: Notify Party
     description: >-
       The party to be notified upon arrival of goods and when special
       occurrences (usually pre-defined) take place during a transportation
       service.
-    $ref: ./Organization.yml
+    type: object
+    properties:
+      type:
+        type: array
+        readOnly: true
+        const:
+          - Organization
+        default:
+          - Organization
+        items:
+          type: string
+          enum:
+            - Organization
+      id:
+        title: Identifier
+        description: Decentralized identifier for the notify party
+        type: string
+      name:
+        title: Name
+        description: Name of the notify party.
+        type: string
+      url:
+        title: URL
+        description: URL of the notify party.
+        type: string
+      description:
+        title: Description
+        description: Description of the notify party.
+        type: string
+      email:
+        title: Email Address
+        description: notify party's primary email address.
+        type: string
+      phoneNumber:
+        title: Phone Number
+        description: notify party's contact phone number.
+        type: string
+      location:
+        title: Location
+        description: Notify party's physical location, such as address or coordinates.
+        type: object
+        properties:
+          type:
+            type: array
+            readOnly: true
+            const:
+              - Place
+            default:
+              - Place
+            items:
+              type: string
+              enum:
+                - Place
+          address:
+            title: Postal Address
+            description: The postal address for an organization or place.
+            $ref: ./PostalAddress.yml
+    additionalProperties: false
+    required:
+      - type
+      - name
     $linkedData:
       term: notify
       '@id': >-
-        https://service.unece.org/trade/uncefact/vocabulary/uncefact/#notifyParty
+        https://vocabulary.uncefact.org/notifiedParty
   freightForwarder:
     title: Freight Forwarder
     description: >-
@@ -100,13 +345,73 @@ properties:
       shipment (the consolidated shipment), which is sent to a counterpart that
       mirrors the consolidator's activity by dividing the consolidated
       consignment into its original components.
-    $ref: ./Organization.yml
+    type: object
+    properties:
+      type:
+        type: array
+        readOnly: true
+        const:
+          - Organization
+        default:
+          - Organization
+        items:
+          type: string
+          enum:
+            - Organization
+      id:
+        title: Identifier
+        description: Decentralized identifier for the freight forwarder
+        type: string
+      name:
+        title: Name
+        description: Name of the freight forwarder.
+        type: string
+      url:
+        title: URL
+        description: URL of the freight forwarder.
+        type: string
+      description:
+        title: Description
+        description: Description of the freight forwarder.
+        type: string
+      email:
+        title: Email Address
+        description: nfreight forwarder's primary email address.
+        type: string
+      phoneNumber:
+        title: Phone Number
+        description: freight forwarder's contact phone number.
+        type: string
+      location:
+        title: Location
+        description: freight forwarder's physical location, such as address or coordinates.
+        type: object
+        properties:
+          type:
+            type: array
+            readOnly: true
+            const:
+              - Place
+            default:
+              - Place
+            items:
+              type: string
+              enum:
+                - Place
+          address:
+            title: Postal Address
+            description: The postal address for an organization or place.
+            $ref: ./PostalAddress.yml
+    additionalProperties: false
+    required:
+      - type
+      - name
     $linkedData:
       term: freightForwarder
       '@id': >-
-        https://service.unece.org/trade/uncefact/vocabulary/uncefact/#freightForwarderParty
+        https://vocabulary.uncefact.org/freightForwarderParty
   freight:
-    title: 'Freight '
+    title: Freight
     description: Content described by the bill of lading
     $ref: ./ParcelDelivery.yml
     $linkedData:
@@ -153,7 +458,18 @@ properties:
       term: portOfDischarge
       '@id': >-
         https://service.unece.org/trade/uncefact/vocabulary/uncl3227/#Place_of_discharge
+  particulars:
+    title: Particulars
+    description: Description of goods.
+    type: array
+    items:
+      $ref: ./ConsignmentItem.yml
+    $linkedData:
+      term: particulars
+      '@id': https://vocabulary.uncefact.org/includedConsignmentItem
 additionalProperties: false
+required:
+  - type
 example: |-
   {
     "type": ["BillOfLading"],
@@ -164,35 +480,96 @@ example: |-
       "type": ["Organization"],
       "name": "Carrior Goods And More",
       "email": "Adaline29@example.com",
-      "phoneNumber": "+1 555-234-9983"
+      "phoneNumber": "+1 555-234-9983",
+      "location": {
+        "type": ["Place"],
+        "address": {
+          "type": ["PostalAddress"],
+          "name": "Hahn LLC",
+          "streetAddress": "786 Pfeffer Plains",
+          "addressLocality": "West Ottilie",
+          "addressRegion": "Nebraska",
+          "postalCode": "50878-0870",
+          "addressCountry": "Cook Islands"
+        }
+      }
     },
     "consignor": {
       "type": ["Organization"],
       "name": "Consignor Is Us",
       "email": "Idella60@example.org",
-      "phoneNumber": "+1-555-953-9479"
+      "phoneNumber": "+1-555-953-9479",
+      "location": {
+        "type": ["Place"],
+        "address": {
+          "type": ["PostalAddress"],
+          "name": "Hahn LLC",
+          "streetAddress": "786 Pfeffer Plains",
+          "addressLocality": "West Ottilie",
+          "addressRegion": "Nebraska",
+          "postalCode": "50878-0870",
+          "addressCountry": "Cook Islands"
+        }
+      }
     },
     "consignee": {
       "type": ["Organization"],
       "name": "Victorian Consignee",
       "email": "Victoria.Hane74@example.org",
-      "phoneNumber": "+1-555-455-9053"
+      "phoneNumber": "+1-555-455-9053",
+      "location": {
+        "type": ["Place"],
+        "address": {
+          "type": ["PostalAddress"],
+          "name": "Hahn LLC",
+          "streetAddress": "786 Pfeffer Plains",
+          "addressLocality": "West Ottilie",
+          "addressRegion": "Nebraska",
+          "postalCode": "50878-0870",
+          "addressCountry": "Cook Islands"
+        }
+      }
     },
     "notify": {
       "type": ["Organization"],
       "name": "Florida Contact Org",
       "email": "Florida91@example.net",
-      "phoneNumber": "+1-555-104-1126"
+      "phoneNumber": "+1-555-104-1126",
+      "location": {
+        "type": ["Place"],
+        "address": {
+          "type": ["PostalAddress"],
+          "name": "Hahn LLC",
+          "streetAddress": "786 Pfeffer Plains",
+          "addressLocality": "West Ottilie",
+          "addressRegion": "Nebraska",
+          "postalCode": "50878-0870",
+          "addressCountry": "Cook Islands"
+        }
+      }
+    },
+    "freightForwarder": {
+      "type": ["Organization"],
+      "name": "Florida Contact Org",
+      "email": "Florida91@example.net",
+      "phoneNumber": "+1-555-104-1126",
+      "location": {
+        "type": ["Place"],
+        "address": {
+          "type": ["PostalAddress"],
+          "name": "Hahn LLC",
+          "streetAddress": "786 Pfeffer Plains",
+          "addressLocality": "West Ottilie",
+          "addressRegion": "Nebraska",
+          "postalCode": "50878-0870",
+          "addressCountry": "Cook Islands"
+        }
+      }
     },
     "freight": {
       "type": ["ParcelDelivery"],
       "deliveryAddress": {
         "type": ["Place"],
-        "geo": {
-          "type": ["GeoCoordinates"],
-          "latitude": "-20.840731978309044",
-          "longitude": "-159.78393883134225"
-        },
         "address": {
           "type": ["PostalAddress"],
           "name": "Hahn LLC",
@@ -205,11 +582,6 @@ example: |-
       },
       "originAddress": {
         "type": ["Place"],
-        "geo": {
-          "type": ["GeoCoordinates"],
-          "latitude": "-23.25979250428427",
-          "longitude": "-58.36431415044023"
-        },
         "address": {
           "type": ["PostalAddress"],
           "name": "Rosenbaum, Hills and Pagac",
@@ -220,6 +592,133 @@ example: |-
           "addressCountry": "Paraguay"
         }
       },
+      "partOfOrder": {
+        "type": ["Order"],
+        "orderedItems": [
+            {
+                "type": ["OrderItem"],
+                "marketplace": {
+                  "type": ["Organization"],
+                  "name": "Florida Contact Org",
+                  "email": "Florida91@example.net",
+                  "phoneNumber": "+1-555-104-1126",
+                  "location": {
+                    "type": ["Place"],
+                    "address": {
+                      "type": ["PostalAddress"],
+                      "name": "Hahn LLC",
+                      "streetAddress": "786 Pfeffer Plains",
+                      "addressLocality": "West Ottilie",
+                      "addressRegion": "Nebraska",
+                      "postalCode": "50878-0870",
+                      "addressCountry": "Cook Islands"
+                    }
+                  }
+                },
+                "fulfillmentCenter": {
+                  "type": ["Organization"],
+                  "name": "Florida Contact Org",
+                  "email": "Florida91@example.net",
+                  "phoneNumber": "+1-555-104-1126",
+                  "location": {
+                    "type": ["Place"],
+                    "address": {
+                      "type": ["PostalAddress"],
+                      "name": "Hahn LLC",
+                      "streetAddress": "786 Pfeffer Plains",
+                      "addressLocality": "West Ottilie",
+                      "addressRegion": "Nebraska",
+                      "postalCode": "50878-0870",
+                      "addressCountry": "Cook Islands"
+                    }
+                  }  
+                },
+                "orderedItem": {
+                  "type": ["Product"],
+                  "manufacturer": {
+                    "type": ["Organization"],
+                    "name": "Florida Contact Org",
+                    "email": "Florida91@example.net",
+                    "phoneNumber": "+1-555-104-1126",
+                    "location": {
+                      "type": ["Place"],
+                      "address": {
+                        "type": ["PostalAddress"],
+                        "name": "Hahn LLC",
+                        "streetAddress": "786 Pfeffer Plains",
+                        "addressLocality": "West Ottilie",
+                        "addressRegion": "Nebraska",
+                        "postalCode": "50878-0870",
+                        "addressCountry": "Cook Islands"
+                      }
+                    }    
+                  },
+                  "sizeOrAmount": {
+                    "type": [
+                      "QuantitativeValue"
+                    ],
+                    "unitCode": "boxes",
+                    "value": "500"
+                  },
+                  "weight": {
+                    "type": [
+                      "QuantitativeValue"
+                    ],
+                    "unitCode": "lbs",
+                    "value": "1533"
+                  },
+                  "depth": {
+                    "type": [
+                      "QuantitativeValue"
+                    ],
+                    "unitCode": "ft",
+                    "value": "10"
+                  },
+                  "width": {
+                    "type": [
+                      "QuantitativeValue"
+                    ],
+                    "unitCode": "ft",
+                    "value": "20"
+                  },
+                  "height": {
+                    "type": [
+                      "QuantitativeValue"
+                    ],
+                    "unitCode": "ft",
+                    "value": "30"
+                  },
+                  "commodity": {
+                    "type": [
+                      "Commodity"
+                    ],
+                    "commodityCode": "851671",
+                    "commodityCodeType": "HS"
+                  },
+                  "seller": {
+                    "type": ["Organization"],
+                    "name": "Florida Contact Org",
+                    "email": "Florida91@example.net",
+                    "phoneNumber": "+1-555-104-1126",
+                    "location": {
+                      "type": ["Place"],
+                      "address": {
+                        "type": ["PostalAddress"],
+                        "name": "Hahn LLC",
+                        "streetAddress": "786 Pfeffer Plains",
+                        "addressLocality": "West Ottilie",
+                        "addressRegion": "Nebraska",
+                        "postalCode": "50878-0870",
+                        "addressCountry": "Cook Islands"
+                      }
+                    } 
+                  }
+                },
+                "orderedQuantity": 1
+            }
+        ],
+        "orderNumber": "121"
+    },
       "deliveryMethod": "Ocean transport",
       "trackingNumber": "178380801954"
     },
@@ -230,5 +729,32 @@ example: |-
     "portOfDischarge": {
       "type": ["Place"],
       "unLocode": "MXATM"
-    }
+    },
+    "particulars": [
+      {
+        "type": ["ConsignmentItem"],
+        "marksAndNumbers": "Espresso Italiano",
+        "commodity": {
+          "type": ["Commodity"],
+          "commodityCode": "851671",
+          "commodityCodeType": "HS"
+        },
+        "packageQuantity": 2200,
+        "netWeight": {
+          "type": ["QuantitativeValue"],
+          "unitCode": "kg",
+          "value": "14600"
+        },
+        "grossWeight": {
+          "type": ["QuantitativeValue"],
+          "unitCode": "kg",
+          "value": "15960"
+        },
+        "grossVolume": {
+          "type": ["QuantitativeValue"],
+          "value": "856",
+          "unitCode": "cmb"
+        }
+      }
+    ]
   }

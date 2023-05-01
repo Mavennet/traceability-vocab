@@ -37,7 +37,7 @@ properties:
     $linkedData:
       term: shippingMarks
       '@id': >-
-        https://service.unece.org/trade/uncefact/vocabulary/uncefact/#physicalShippingMarks
+        https://vocabulary.uncefact.org/physicalShippingMarks
   descriptionOfGoods:
     title: Description of Goods
     description: >-
@@ -57,6 +57,7 @@ properties:
       '@id': >-
         https://api.swaggerhub.com/domains/dcsaorg/DCSA_DOMAIN/1.0.1#/components/schemas/HSCode
 required:
+  - type
   - shippingMarks
 example: |-
   {

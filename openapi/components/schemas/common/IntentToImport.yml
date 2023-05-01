@@ -27,18 +27,18 @@ properties:
     description: >-
       Organization that is declaring their intention for a product to be exported to a
       different location than where it was created.
-    type: object
+    $ref: ../snippets/IntentToImportOrganization.yml
     $linkedData:
       term: exporter
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#exporterParty
+      '@id': https://vocabulary.uncefact.org/exporterParty
   importer:
     title: Importer
     description: >-
       Organization that is expected to receive some amount of the product.
-    type: object
+    $ref: ../snippets/IntentToImportOrganization.yml
     $linkedData:
       term: importer
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#importerParty
+      '@id': https://vocabulary.uncefact.org/importerParty
   product:
     title: Product
     description: Product details as specified in the Product schema
@@ -54,14 +54,17 @@ properties:
       term: declarationDate
       '@id': https://schema.org/startDate
 additionalProperties: false
-required: 
+required:
+  - type
   - importer
   - product
+  - declarationDate
 example: |-
   {
     "type": ["IntentToImport"],
     "exporter": {
       "type": ["Organization"],
+      "id": "did:web:generic-motor-company.example.com",
       "name": "Maxi Acero Mexicano",
       "description": "Fusion y fabricacion de acero solido",
       "location": {
@@ -92,7 +95,9 @@ example: |-
           "postalCode": "48232-5170",
           "addressCountry": "USA"
         }
-      }
+      },
+      "email": "info@example.net",
+      "phoneNumber": "555-127-7813"
     },
     "product": {
       "type": ["Product"],

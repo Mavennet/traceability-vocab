@@ -29,7 +29,7 @@ properties:
     type: string
     $linkedData:
       term: applicantCertificationNumber
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#identificationId
+      '@id': https://vocabulary.uncefact.org/identification
   authorizedOperationContacts:
     title: Authorized Operation Contacts
     description: Operation contact(s) including names and titles.
@@ -38,7 +38,7 @@ properties:
       $ref: ./Person.yml
     $linkedData:
       term: authorizedOperationContacts
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#specifiedPerson
+      '@id': https://vocabulary.uncefact.org/specifiedContactPerson
   peoplePresent:
     title: People Present
     description: Other people present at inspection, including names and titles.
@@ -47,42 +47,42 @@ properties:
       $ref: ./Person.yml
     $linkedData:
       term: peoplePresent
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#associatedParty
+      '@id': https://vocabulary.uncefact.org/associatedParty
   newApplicant:
     title: New Applicant
     description: The applicant has yet to be organic certified.
     type: boolean
     $linkedData:
       term: newApplicant
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#information
+      '@id': https://vocabulary.uncefact.org/information
   continuingCertification:
     title: Continuing Certification
     description: The applicant was previously organic certified.
     type: boolean
     $linkedData:
       term: continuingCertification
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#information
+      '@id': https://vocabulary.uncefact.org/information
   newLocationActivity:
     title: New Production Location or Activity
     description: (If continuing certification) the applicant was previously organic certified and has since added a new production location or activity.
     type: boolean
     $linkedData:
       term: newLocationActivity
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#information
+      '@id': https://vocabulary.uncefact.org/information
   reinstatement:
     title: Reinstatement
     description: The applicant was, but is no longer, organic certified.
     type: boolean
     $linkedData:
       term: reinstatement
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#information
+      '@id': https://vocabulary.uncefact.org/information
   announcedInspection:
     title: Announced Inspection
     description: The inspection was announced, as opposed to an unnanounced inspection.
     type: boolean
     $linkedData:
       term: announcedInspection
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#information
+      '@id': https://vocabulary.uncefact.org/information
   estimatedHarvestDate:
     title: Estimated Harvest Date
     description: The estimated harvest date for the applicant's operation.
@@ -96,35 +96,35 @@ properties:
     type: boolean
     $linkedData:
       term: pesticideResidueSampling
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#information
+      '@id': https://vocabulary.uncefact.org/information
   samplingDetails:
     title: Sampling Details
     description: If pesticide residue sampling was conducted, please provide details.
     type: string
     $linkedData:
       term: samplingDetails
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#content
+      '@id': https://vocabulary.uncefact.org/content
   introductionOperationDescription:
     title: Introduction / Operation Description
     description: Describe conditions at the time of inspection, and any general summary comments about the operation needed to complement the description in the client's OSP. Note to which standards (NOP) compliance is verified, including any additional certifications (international standards, GAPs, etc.).
     type: string
     $linkedData:
       term: introductionOperationDescription
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#description
+      '@id': https://schema.org/description
   resolutionIssuesActionItems:
     title: Resolution of Issues and Action Items
     description: List any previously identified issue, non-compliance, corrective action required, or request for further information provided by the Certifier; a description of how each has been addressed; and whether each has been resolved or is pending further action.
     type: string
     $linkedData:
       term: resolutionIssuesActionItems
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#description
+      '@id': https://schema.org/description
   issuesRequests:
     title: Issues of Concern and Requests for Information
     description: Current issues of concern and requests for information (RFI) from the operator at this inspection.
     type: string
     $linkedData:
       term: issuesRequests
-      '@id': https://service.unece.org/trade/uncefact/vocabulary/uncefact/#additionalDescription
+      '@id': https://vocabulary.uncefact.org/additionalDescription
   attachments:
     title: Attachments
     description: List attachments here or refer to section numbers of the OSP and IRF where documents are described, as appropriate.
@@ -133,7 +133,7 @@ properties:
       type: string
     $linkedData:
       term: attachments
-      '@id':  https://service.unece.org/trade/uncefact/vocabulary/uncefact/#additionalDocument
+      '@id':  https://vocabulary.uncefact.org/additionalDocument
   OSPSectionReviews:
     title: OSP Section Reviews
     description: OSP (Organic System Plan) reviews by section.
@@ -144,17 +144,20 @@ properties:
       term: OSPSectionReviews
       '@id': https://w3id.org/traceability#OrganicOSPSectionReview
 additionalProperties: false
+required:
+  - type
 example: |-
   {
     "type": ["OrganicInspection"],
     "commonInfo": {
       "type": ["AgricultureInspectionCommonInfo"],
       "applicant": {
-        "type" : ["Entity"],
-        "entityType": "Organization",
-        "name" : "Jessica Sherawat",
-        "email": "Jessica58@example.com",
-        "phoneNumber": "+1-555-581-2077"
+        "type" : ["Organization"],
+        "name": "Miracle Produce",
+        "description": "Organic fruits & vegetables",
+        "email": "contact@example.com",
+        "phoneNumber": "460-555-2604",
+        "url": "miracle.example.com"
       },
       "facility": {
         "type": [
@@ -172,7 +175,7 @@ example: |-
           "type": [
             "PostalAddress"
           ],
-          "name": "Ace Foodstuffs",
+          "name": "Miracle Produce",
           "streetAddress": "853 Wisozk River",
           "addressLocality": "New Noemyfort",
           "addressRegion": "New Mexico",
@@ -224,21 +227,20 @@ example: |-
         ]
       },
       "delegateOf": {
-        "type": ["Entity"],
-        "entityType" : "Organization",
+        "type": ["Organization"],
         "name": "Glayson & Co. Inspections",
         "description": "Agricultural cleanliness & grade assurance",
         "email": "Marina96@glaysonco.net",
-        "phoneNumber": "555-521-6143",
-        "faxNumber": "555-150-7668"
+        "phoneNumber": "521-555-6143",
+        "faxNumber": "150-555-7668"
       },
       "regulatoryAgency": {
         "type": ["Organization"],
         "name": "CDFA",
         "description": "California Department of Food and Agriculture",
-        "email": "Briana55@cdfa.ca.gov.org",
-        "phoneNumber": "555-467-2604",
-        "faxNumber": "+1-555-486-3154"
+        "email": "relations@example.org",
+        "phoneNumber": "467-555-2604",
+        "faxNumber": "486-555-3154"
       },
       "inspectionStarted": "2020-03-15T14:30-08:00",
       "inspectionEnded": "2020-03-15T17:30-08:00"

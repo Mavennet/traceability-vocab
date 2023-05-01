@@ -8,18 +8,6 @@ servers:
   - url: http://localhost:5000/openapi/components
 
 paths:
-  /schemas/common/AdditionalProductCodeRegistrationCredential.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/AdditionalProductCodeRegistrationCredential.yml'
-    
-
   /schemas/common/AgricultureActivity.yml:
     get:
       tags:
@@ -92,6 +80,30 @@ paths:
                 $ref: './components/schemas/common/AgricultureProduct.yml'
     
 
+  /schemas/common/BankAccount.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/BankAccount.yml'
+    
+
+  /schemas/common/BankAccountHolderAffirmation.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/BankAccountHolderAffirmation.yml'
+    
+
   /schemas/common/BillOfLading.yml:
     get:
       tags:
@@ -104,7 +116,7 @@ paths:
                 $ref: './components/schemas/common/BillOfLading.yml'
     
 
-  /schemas/common/BindingDataRegistrationCredential.yml:
+  /schemas/common/BusinessRegistrationAffirmation.yml:
     get:
       tags:
       - common
@@ -113,10 +125,10 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/BindingDataRegistrationCredential.yml'
+                $ref: './components/schemas/common/BusinessRegistrationAffirmation.yml'
     
 
-  /schemas/common/Brand.yml:
+  /schemas/common/CBPEntry.yml:
     get:
       tags:
       - common
@@ -125,7 +137,67 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/Brand.yml'
+                $ref: './components/schemas/common/CBPEntry.yml'
+    
+
+  /schemas/common/CBPEntryEntity.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/CBPEntryEntity.yml'
+    
+
+  /schemas/common/CBPEntryLineItem.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/CBPEntryLineItem.yml'
+    
+
+  /schemas/common/CBPEntrySummary.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/CBPEntrySummary.yml'
+    
+
+  /schemas/common/CBPEntrySummaryLineItem.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/CBPEntrySummaryLineItem.yml'
+    
+
+  /schemas/common/CBPImporterOfRecord.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/CBPImporterOfRecord.yml'
     
 
   /schemas/common/CTPAT.yml:
@@ -138,6 +210,30 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/CTPAT.yml'
+    
+
+  /schemas/common/CTPATEIPApplication.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/CTPATEIPApplication.yml'
+    
+
+  /schemas/common/CTPATMember.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/CTPATMember.yml'
     
 
   /schemas/common/CargoItem.yml:
@@ -248,18 +344,6 @@ paths:
                 $ref: './components/schemas/common/ContactPoint.yml'
     
 
-  /schemas/common/CrudeOilProduct.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/CrudeOilProduct.yml'
-    
-
   /schemas/common/Customer.yml:
     get:
       tags:
@@ -320,7 +404,7 @@ paths:
                 $ref: './components/schemas/common/DeliverySchedule.yml'
     
 
-  /schemas/common/DocumentVerificationEvidence.yml:
+  /schemas/common/DeliveryStatement.yml:
     get:
       tags:
       - common
@@ -329,7 +413,7 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/DocumentVerificationEvidence.yml'
+                $ref: './components/schemas/common/DeliveryStatement.yml'
     
 
   /schemas/common/EDDShape.yml:
@@ -366,30 +450,6 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/Entity.yml'
-    
-
-  /schemas/common/EntrySummary.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/EntrySummary.yml'
-    
-
-  /schemas/common/EntrySummaryLineItem.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/EntrySummaryLineItem.yml'
     
 
   /schemas/common/Event.yml:
@@ -692,6 +752,18 @@ paths:
                 $ref: './components/schemas/common/GAPInspection.yml'
     
 
+  /schemas/common/GAPLocationCertification.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/GAPLocationCertification.yml'
+    
+
   /schemas/common/GAPRequirementResult.yml:
     get:
       tags:
@@ -738,42 +810,6 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/IATAAirWaybill.yml'
-    
-
-  /schemas/common/ImmediateDelivery.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/ImmediateDelivery.yml'
-    
-
-  /schemas/common/ImmediateDeliveryEntity.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/ImmediateDeliveryEntity.yml'
-    
-
-  /schemas/common/ImmediateDeliveryLineItem.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/ImmediateDeliveryLineItem.yml'
     
 
   /schemas/common/ImporterSecurityFiling.yml:
@@ -836,6 +872,30 @@ paths:
                 $ref: './components/schemas/common/Instructions.yml'
     
 
+  /schemas/common/IntellectualPropertyRights.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/IntellectualPropertyRights.yml'
+    
+
+  /schemas/common/IntellectualPropertyRightsAffirmation.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/IntellectualPropertyRightsAffirmation.yml'
+    
+
   /schemas/common/IntentToImport.yml:
     get:
       tags:
@@ -858,42 +918,6 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/Invoice.yml'
-    
-
-  /schemas/common/InvoiceRegistrationCredential.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/InvoiceRegistrationCredential.yml'
-    
-
-  /schemas/common/InvoiceRegistrationEvidenceDocument.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/InvoiceRegistrationEvidenceDocument.yml'
-    
-
-  /schemas/common/IssuerAgent.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/IssuerAgent.yml'
     
 
   /schemas/common/LEIaddress.yml:
@@ -956,7 +980,7 @@ paths:
                 $ref: './components/schemas/common/LEIregistration.yml'
     
 
-  /schemas/common/LegalEntityIdentifierCredential.yml:
+  /schemas/common/LaceyActProductDeclaration.yml:
     get:
       tags:
       - common
@@ -965,7 +989,7 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/LegalEntityIdentifierCredential.yml'
+                $ref: './components/schemas/common/LaceyActProductDeclaration.yml'
     
 
   /schemas/common/LinkRole.yml:
@@ -1038,6 +1062,18 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/MechanicalProperty.yml'
+    
+
+  /schemas/common/MonthlyDeliveryStatement.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/MonthlyDeliveryStatement.yml'
     
 
   /schemas/common/MultiModalBillOfLading.yml:
@@ -1148,18 +1184,6 @@ paths:
                 $ref: './components/schemas/common/NAISMATaxonomy.yml'
     
 
-  /schemas/common/NaturalGasProduct.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/NaturalGasProduct.yml'
-    
-
   /schemas/common/OGBillOfLading.yml:
     get:
       tags:
@@ -1170,6 +1194,18 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/OGBillOfLading.yml'
+    
+
+  /schemas/common/OGDeliveryTicket.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/OGDeliveryTicket.yml'
     
 
   /schemas/common/Observation.yml:
@@ -1184,7 +1220,7 @@ paths:
                 $ref: './components/schemas/common/Observation.yml'
     
 
-  /schemas/common/OrderRegistrationCredential.yml:
+  /schemas/common/OilAndGasProduct.yml:
     get:
       tags:
       - common
@@ -1193,10 +1229,10 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/OrderRegistrationCredential.yml'
+                $ref: './components/schemas/common/OilAndGasProduct.yml'
     
 
-  /schemas/common/OrderRegistrationEvidenceDocument.yml:
+  /schemas/common/Order.yml:
     get:
       tags:
       - common
@@ -1205,10 +1241,10 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/OrderRegistrationEvidenceDocument.yml'
+                $ref: './components/schemas/common/Order.yml'
     
 
-  /schemas/common/OrderedItem.yml:
+  /schemas/common/OrderItem.yml:
     get:
       tags:
       - common
@@ -1217,10 +1253,10 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/OrderedItem.yml'
+                $ref: './components/schemas/common/OrderItem.yml'
     
 
-  /schemas/common/OrganicCertificate.yml:
+  /schemas/common/OrganicCertification.yml:
     get:
       tags:
       - common
@@ -1229,7 +1265,7 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/OrganicCertificate.yml'
+                $ref: './components/schemas/common/OrganicCertification.yml'
     
 
   /schemas/common/OrganicInspection.yml:
@@ -1254,6 +1290,18 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/OrganicOSPSectionReview.yml'
+    
+
+  /schemas/common/OrganicProductCertification.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/OrganicProductCertification.yml'
     
 
   /schemas/common/OrganicReview.yml:
@@ -1316,30 +1364,6 @@ paths:
                 $ref: './components/schemas/common/Package.yml'
     
 
-  /schemas/common/PackageItem.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/PackageItem.yml'
-    
-
-  /schemas/common/PackageRegistrationCredential.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/PackageRegistrationCredential.yml'
-    
-
   /schemas/common/PackingList.yml:
     get:
       tags:
@@ -1350,30 +1374,6 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/PackingList.yml'
-    
-
-  /schemas/common/PackingListItem.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/PackingListItem.yml'
-    
-
-  /schemas/common/PackingListRegistrationCredential.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/PackingListRegistrationCredential.yml'
     
 
   /schemas/common/ParcelDelivery.yml:
@@ -1410,6 +1410,30 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/Person.yml'
+    
+
+  /schemas/common/PestDetermination.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/PestDetermination.yml'
+    
+
+  /schemas/common/PestSample.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/PestSample.yml'
     
 
   /schemas/common/Phytosanitary.yml:
@@ -1508,42 +1532,6 @@ paths:
                 $ref: './components/schemas/common/Product.yml'
     
 
-  /schemas/common/ProductReceiptRegistrationCredential.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/ProductReceiptRegistrationCredential.yml'
-    
-
-  /schemas/common/ProductRegistrationCredential.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/ProductRegistrationCredential.yml'
-    
-
-  /schemas/common/ProductRegistrationEvidenceDocument.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/ProductRegistrationEvidenceDocument.yml'
-    
-
   /schemas/common/Purchase.yml:
     get:
       tags:
@@ -1614,6 +1602,18 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/RevocationList2020Status.yml'
+    
+
+  /schemas/common/RoutingInfo.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/RoutingInfo.yml'
     
 
   /schemas/common/SIMASteelImportLicense.yml:
@@ -1688,6 +1688,18 @@ paths:
                 $ref: './components/schemas/common/ServiceCharge.yml'
     
 
+  /schemas/common/ShippingDetails.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/ShippingDetails.yml'
+    
+
   /schemas/common/ShippingInstructions.yml:
     get:
       tags:
@@ -1746,6 +1758,18 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/common/Taxonomy.yml'
+    
+
+  /schemas/common/TemperatureReading.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/TemperatureReading.yml'
     
 
   /schemas/common/Template.yml:
@@ -1856,6 +1880,138 @@ paths:
                 $ref: './components/schemas/common/TransportEvent.yml'
     
 
+  /schemas/common/USDAPPQ203ForeignSiteInspection.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ203ForeignSiteInspection.yml'
+    
+
+  /schemas/common/USDAPPQ309APestInterceptionRecord.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ309APestInterceptionRecord.yml'
+    
+
+  /schemas/common/USDAPPQ368NoticeOfArrival.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ368NoticeOfArrival.yml'
+    
+
+  /schemas/common/USDAPPQ391SpecimensForDetermination.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ391SpecimensForDetermination.yml'
+    
+
+  /schemas/common/USDAPPQ429FumigationRecord.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ429FumigationRecord.yml'
+    
+
+  /schemas/common/USDAPPQ449RTemperatureCalibration.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ449RTemperatureCalibration.yml'
+    
+
+  /schemas/common/USDAPPQ505PlantDeclaration.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ505PlantDeclaration.yml'
+    
+
+  /schemas/common/USDAPPQ519ComplianceAgreement.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ519ComplianceAgreement.yml'
+    
+
+  /schemas/common/USDAPPQ587PlantImportApplication.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ587PlantImportApplication.yml'
+    
+
+  /schemas/common/USDAPPQ587PlantImportPermit.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDAPPQ587PlantImportPermit.yml'
+    
+
+  /schemas/common/USDASpecialtyCrops237AForm.yml:
+    get:
+      tags:
+      - common
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/common/USDASpecialtyCrops237AForm.yml'
+    
+
   /schemas/common/USMCACertifier.yml:
     get:
       tags:
@@ -1892,18 +2048,6 @@ paths:
                 $ref: './components/schemas/common/UsdaSc6.yml'
     
 
-  /schemas/common/WayBillRegistrationCredential.yml:
-    get:
-      tags:
-      - common
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/common/WayBillRegistrationCredential.yml'
-    
-
   /schemas/common/Workflow.yml:
     get:
       tags:
@@ -1916,28 +2060,28 @@ paths:
                 $ref: './components/schemas/common/Workflow.yml'
     
 
-  /schemas/common/ppq203.yml:
+  /schemas/credentials/AgricultureCanineCard.yml:
     get:
       tags:
-      - common
+      - credentials
       responses:
         '200':
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/ppq203.yml'
+                $ref: './components/schemas/credentials/AgricultureCanineCard.yml'
     
 
-  /schemas/common/ppq587.yml:
+  /schemas/credentials/BankAccountCredential.yml:
     get:
       tags:
-      - common
+      - credentials
       responses:
         '200':
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/common/ppq587.yml'
+                $ref: './components/schemas/credentials/BankAccountCredential.yml'
     
 
   /schemas/credentials/BillOfLadingCredential.yml:
@@ -1952,7 +2096,7 @@ paths:
                 $ref: './components/schemas/credentials/BillOfLadingCredential.yml'
     
 
-  /schemas/credentials/CBP3461ImmediateDeliveryCredential.yml:
+  /schemas/credentials/CBP3461EntryCredential.yml:
     get:
       tags:
       - credentials
@@ -1961,7 +2105,7 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/credentials/CBP3461ImmediateDeliveryCredential.yml'
+                $ref: './components/schemas/credentials/CBP3461EntryCredential.yml'
     
 
   /schemas/credentials/CBP7501EntrySummaryCredential.yml:
@@ -1988,6 +2132,54 @@ paths:
                 $ref: './components/schemas/credentials/CTPATCertificate.yml'
     
 
+  /schemas/credentials/CTPATEIPApplicationCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/CTPATEIPApplicationCredential.yml'
+    
+
+  /schemas/credentials/CTPATEIPFulfillmentCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/CTPATEIPFulfillmentCredential.yml'
+    
+
+  /schemas/credentials/CTPATEIPMarketplaceCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/CTPATEIPMarketplaceCredential.yml'
+    
+
+  /schemas/credentials/CTPATEIPSellerCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/CTPATEIPSellerCredential.yml'
+    
+
   /schemas/credentials/CertificationOfOrigin.yml:
     get:
       tags:
@@ -2010,18 +2202,6 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/credentials/CommercialInvoiceCredential.yml'
-    
-
-  /schemas/credentials/CrudeOilProductCredential.yml:
-    get:
-      tags:
-      - credentials
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/credentials/CrudeOilProductCredential.yml'
     
 
   /schemas/credentials/DCSAShippingInstructionCredential.yml:
@@ -2058,6 +2238,18 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/credentials/DeMinimisShipmentCredential.yml'
+    
+
+  /schemas/credentials/EventCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/EventCredential.yml'
     
 
   /schemas/credentials/FSMACreatingCTECredential.yml:
@@ -2144,18 +2336,6 @@ paths:
                 $ref: './components/schemas/credentials/FoodDefenseInspectionCredential.yml'
     
 
-  /schemas/credentials/FoodGradeInspectionCertificate.yml:
-    get:
-      tags:
-      - credentials
-      responses:
-        '200':
-          content:
-            application/yml:
-              schema:
-                $ref: './components/schemas/credentials/FoodGradeInspectionCertificate.yml'
-    
-
   /schemas/credentials/FoodGradeInspectionCredential.yml:
     get:
       tags:
@@ -2180,6 +2360,18 @@ paths:
                 $ref: './components/schemas/credentials/FreightManifestCredential.yml'
     
 
+  /schemas/credentials/FulfillmentRegistrationCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/FulfillmentRegistrationCredential.yml'
+    
+
   /schemas/credentials/GAPInspectionCredential.yml:
     get:
       tags:
@@ -2190,6 +2382,90 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/credentials/GAPInspectionCredential.yml'
+    
+
+  /schemas/credentials/GS18PrefixLicenseCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/GS18PrefixLicenseCredential.yml'
+    
+
+  /schemas/credentials/GS1CompanyPrefixLicenseCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/GS1CompanyPrefixLicenseCredential.yml'
+    
+
+  /schemas/credentials/GS1DataCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/GS1DataCredential.yml'
+    
+
+  /schemas/credentials/GS1DelegationCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/GS1DelegationCredential.yml'
+    
+
+  /schemas/credentials/GS1IdentificationKeyLicenseCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/GS1IdentificationKeyLicenseCredential.yml'
+    
+
+  /schemas/credentials/GS1KeyCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/GS1KeyCredential.yml'
+    
+
+  /schemas/credentials/GS1PrefixLicenseCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/GS1PrefixLicenseCredential.yml'
     
 
   /schemas/credentials/HouseBillOfLadingCredential.yml:
@@ -2228,6 +2504,18 @@ paths:
                 $ref: './components/schemas/credentials/ImporterSecurityFilingCredential.yml'
     
 
+  /schemas/credentials/IntellectualPropertyRightsCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/IntellectualPropertyRightsCredential.yml'
+    
+
   /schemas/credentials/IntentToImportCredential.yml:
     get:
       tags:
@@ -2238,6 +2526,18 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/credentials/IntentToImportCredential.yml'
+    
+
+  /schemas/credentials/InventoryRegistrationCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/InventoryRegistrationCredential.yml'
     
 
   /schemas/credentials/MasterBillOfLadingCredential.yml:
@@ -2276,7 +2576,7 @@ paths:
                 $ref: './components/schemas/credentials/MultiModalBillOfLadingCredential.yml'
     
 
-  /schemas/credentials/NaturalGasProductCredential.yml:
+  /schemas/credentials/OGDeliveryTicketCredential.yml:
     get:
       tags:
       - credentials
@@ -2285,7 +2585,31 @@ paths:
           content:
             application/yml:
               schema:
-                $ref: './components/schemas/credentials/NaturalGasProductCredential.yml'
+                $ref: './components/schemas/credentials/OGDeliveryTicketCredential.yml'
+    
+
+  /schemas/credentials/OilAndGasProductCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/OilAndGasProductCredential.yml'
+    
+
+  /schemas/credentials/OrderConfirmationCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/OrderConfirmationCredential.yml'
     
 
   /schemas/credentials/OrganicCertificateCredential.yml:
@@ -2322,6 +2646,30 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/credentials/PackingListCredential.yml'
+    
+
+  /schemas/credentials/PlantSystemsInspectionCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/PlantSystemsInspectionCredential.yml'
+    
+
+  /schemas/credentials/ProductRegistrationCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/ProductRegistrationCredential.yml'
     
 
   /schemas/credentials/ProformaInvoiceCredential.yml:
@@ -2382,6 +2730,18 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/credentials/SeaCargoManifestCredential.yml'
+    
+
+  /schemas/credentials/SellerRegistrationCredential.yml:
+    get:
+      tags:
+      - credentials
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/credentials/SellerRegistrationCredential.yml'
     
 
   /schemas/credentials/ShippingInstructionsCredential.yml:
@@ -2466,4 +2826,172 @@ paths:
             application/yml:
               schema:
                 $ref: './components/schemas/presentations/TraceablePresentation.yml'
+    
+
+  /schemas/snippets/BuyerParty.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/BuyerParty.yml'
+    
+
+  /schemas/snippets/ConsigneeParty.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/ConsigneeParty.yml'
+    
+
+  /schemas/snippets/IntentToImportOrganization.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/IntentToImportOrganization.yml'
+    
+
+  /schemas/snippets/IntentToImportPlace.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/IntentToImportPlace.yml'
+    
+
+  /schemas/snippets/IssuerOrganization.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/IssuerOrganization.yml'
+    
+
+  /schemas/snippets/ManufacturerParty.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/ManufacturerParty.yml'
+    
+
+  /schemas/snippets/SellerParty.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/SellerParty.yml'
+    
+
+  /schemas/snippets/ShipToParty.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/ShipToParty.yml'
+    
+
+  /schemas/snippets/carrier.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/carrier.yml'
+    
+
+  /schemas/snippets/consignee.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/consignee.yml'
+    
+
+  /schemas/snippets/consignor.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/consignor.yml'
+    
+
+  /schemas/snippets/forwarder.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/forwarder.yml'
+    
+
+  /schemas/snippets/notify.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/notify.yml'
+    
+
+  /schemas/snippets/proof.yml:
+    get:
+      tags:
+      - snippets
+      responses:
+        '200':
+          content:
+            application/yml:
+              schema:
+                $ref: './components/schemas/snippets/proof.yml'
     
